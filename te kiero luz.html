@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Luz ✨</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Georgia', serif;
+}
+
+body{
+    height:100vh;
+    background:linear-gradient(to bottom, #0f172a, #1e293b, #334155);
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+/* Estrellas */
+.stars{
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation:blink 2s infinite;
+}
+
+@keyframes blink{
+    0%,100%{opacity:0.2;}
+    50%{opacity:1;}
+}
+
+/* Tarjeta */
+.card{
+    width:350px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:25px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 0 30px rgba(255,255,255,0.2);
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+}
+
+.card img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid white;
+    margin-bottom:20px;
+    box-shadow:0 0 20px rgba(255,255,255,0.6);
+}
+
+h1{
+    font-size:35px;
+    margin-bottom:10px;
+    color:#f8fafc;
+    text-shadow:0 0 10px white;
+}
+
+.poema{
+    font-size:17px;
+    line-height:1.7;
+    color:#e2e8f0;
+    margin-bottom:25px;
+}
+
+button{
+    padding:14px 28px;
+    border:none;
+    border-radius:30px;
+    background:white;
+    color:#0f172a;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 0 15px rgba(255,255,255,0.5);
+}
+
+button:hover{
+    transform:scale(1.08);
+    background:#facc15;
+    color:black;
+}
+
+.mensaje{
+    margin-top:20px;
+    font-size:24px;
+    color:#facc15;
+    display:none;
+    animation:aparecer 1s ease;
+    text-shadow:0 0 10px #facc15;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars">
+    <div class="star" style="top:10%; left:20%;"></div>
+    <div class="star" style="top:30%; left:80%;"></div>
+    <div class="star" style="top:70%; left:15%;"></div>
+    <div class="star" style="top:50%; left:50%;"></div>
+    <div class="star" style="top:85%; left:70%;"></div>
+    <div class="star" style="top:15%; left:60%;"></div>
+    <div class="star" style="top:40%; left:10%;"></div>
+</div>
+
+<div class="card">
+
+    <!-- CAMBIA la foto -->
+    <img src="foto.png" alt="Luz">
+
+    <h1>Luz ✨</h1>
+
+    <div class="poema">
+        Entre millones de estrellas en el cielo, <br>
+        siempre existe una que brilla diferente. <br><br>
+
+        Y así llegaste tú, Luz… <br>
+        iluminando mis días sin darte cuenta, <br>
+        como un amanecer bonito después de una noche fría. <br><br>
+
+        Porque tu nombre no solo es “Luz”, <br>
+        tú realmente iluminas todo lo que tocas. 💫
+    </div>
+
+    <button onclick="mostrarMensaje()">
+        Presióname ❤️
+    </button>
+
+    <div class="mensaje" id="mensaje">
+        Te kiero mucho Luz Zapata 💖
+    </div>
+
+</div>
+
+<script>
+function mostrarMensaje(){
+    document.getElementById("mensaje").style.display="block";
+}
+</script>
+
+</body>
+</html>
